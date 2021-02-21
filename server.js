@@ -5,23 +5,23 @@ const port = 3000;
 
 app.use(express.static('build'))
 
-app.get('api/', (req, res) => {
+app.get('/api/', (req, res) => {
     res.sendFile(__dirname + '/build/');
 })
 
-app.get('api/name', (req, res) => {
+app.get('/api/name', (req, res) => {
     res.json({
         name: name
     })
 })
 
-app.get('api/sonu', (req, res) => {
+app.get('/api/sonu', (req, res) => {
     res.json({
         name: 'sonu'
     })
 })
 
-app.all('*', (req, res) => {
+app.all('/*', (req, res) => {
     res.json({
         message: 'Route not found'
     })
