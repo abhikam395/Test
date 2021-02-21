@@ -11,7 +11,7 @@ app.get('/api/', (req, res) => {
 
 app.get('/api/name', (req, res) => {
     res.json({
-        name: name
+        name: 'name'
     })
 })
 
