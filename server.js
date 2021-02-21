@@ -9,9 +9,10 @@ app.get('/api/', (req, res) => {
     res.sendFile(__dirname + '/build/');
 })
 
-app.get('/api/name', (req, res) => {
+app.get('/api/:id', (req, res) => {
+    let { id } = req.params;
     res.json({
-        name: 'name'
+        name: id
     })
 })
 
