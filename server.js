@@ -5,12 +5,20 @@ const port = 3000;
 
 app.use(express.static('build'))
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('api/', (req, res) => {
+    res.sendFile(__dirname + '/build/');
 })
 
-app.get('/a', (req, res) => {
-    res.sendFile(__dirname + '/build/');
+app.get('api/name', (req, res) => {
+    res.json({
+        name: name
+    })
+})
+
+app.get('api/sonu', (req, res) => {
+    res.json({
+        name: 'sonu'
+    })
 })
 
 app.all('*', (req, res) => {
